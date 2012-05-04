@@ -175,6 +175,10 @@ hr {
   margin:0 0 20px;
 }
 
+img.hover {
+    border-radius: 5px;
+}
+
 footer {
 }
 

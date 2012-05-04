@@ -11,6 +11,22 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("img.hover").hover(
+                function() {
+                    var el = $(this);
+                    el.attr("data-src", this.src);
+                    this.src = "images/" + this.src.split('-')[2];
+                },
+                function() {
+                    this.src = $(this).attr("data-src");
+                }
+            )
+        })
+    </script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -33,6 +49,35 @@
     <section>
         <h1>MP3 Psychoacoustics</h1>
 
+        <h2>Analysis</h2>
+        <h3>128kbps constant bit rate</h3>
+        <img class="hover" src="images/128cbr-sa.gif" alt="128cbr-sa">
+        <img class="hover" src="images/128cbr-fa.gif" alt="128cbr-fa">
+        <p></p>
+        <br />
+        <h3>192kbps constant bit rate</h3>
+        <img class="hover" src="images/192cbr-sa.gif" alt="192cbr-sa">
+        <img class="hover" src="images/192cbr-fa.gif" alt="192cbr-fa">
+        <p></p>
+        <br />
+        <h3>256kbps constant bit rate</h3>
+        <img class="hover" src="images/256cbr-sa.gif" alt="256cbr-sa">
+        <img class="hover" src="images/256cbr-fa.gif" alt="256cbr-fa">
+        <p></p>
+        <br />
+        <h3>128-192kbps variable bit rate</h3>
+        <img class="hover" src="images/128to192vbr-sa.gif" alt="128to192vbr-sa">
+        <img class="hover" src="images/128to192vbr-fa.gif" alt="128to192vbr-fa">
+        <p></p>
+        <br />
+        <h3>64-256kbps variable bit rate</h3>
+        <img class="hover" src="images/64to256vbr-sa.gif" alt="64to256vbr-sa">
+        <img class="hover" src="images/64to256vbr-fa.gif" alt="64to256vbr-fa">
+        <p></p>
+        <br />
+        <h3>128-256kbps variable bit rate</h3>
+        <img class="hover" src="images/128to256vbr-sa.gif" alt="128to256vbr-sa">
+        <img class="hover" src="images/128to256vbr-fa.gif" alt="128to256vbr-fa">
 
     </section>
     <footer>
