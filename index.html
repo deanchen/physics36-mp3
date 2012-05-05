@@ -196,7 +196,7 @@
         <img class="hover" src="images/128cbr-fa.gif" alt="128cbr-fa">
         </p>
         <br />
-        <h3>Conclusion</h3>
+        <h3>Analysis Conclusion</h3>
         <p>The spectral and frequency analysis reveals that 192kbps is likely the lowest acceptable bitrate. Encoding at 128kbps is a minimum if authenticity of reproduction is a concern. 
         The efficiency of the LAME encoder is impressive given that it can achieve a 6:1 compression ratio compared to the 1411kbps audio-CD source without almost no sacrifice to sound quality. 
         </p>
@@ -208,14 +208,41 @@
         128kbps may very well suffice for the majority of music listeners.
         </p>
     <h2>Real World Studies</h2>
-    <p>Numerous studies have been done to test if people can indeed distiguish a high quality MP3 from the lossless source or a lower quality encoding with varying conclusions. Some well known experiments include:
+    <p>Numerous studies have been done to test if people can indeed distiguish a high quality MP3 from the lossless source or a lower quality encoding with varying conclusions. Some well known informal experiments have been conducted by:
         <ul>
-            <li>128kbps Extension Public Listening Test</li>
-            <li></li>
+            <li><a href="#ex-maximum">Maximum PC</a></li>
+            <li><a href="#ex-gizmodo">Gizmodo</a></li>
+            <li><a href="#ex-arstechica">Arstechnica</a></li>
+            <li><a href="#ex-lincomatic">Lincomatic</a></li>
         </ul>
     </p>
 
-    <p>The benchmark for MP3 encondings will vary from person to person because everyone's ears have varying capacities and consume music through different channels. Why not try the experiment yourself at sites like <a herf="http://mp3ornot.com/">MP3 or Not</a>?
+    <h3>Maximum PC</h3>
+    <p>Maximum PC, a PC enthusiast magazine, had four of their employees to pick their favorite audio CD. The employees were challeneged tto distinguish their favorite tracks as well as the favorite track of others among the original lossless WAV, the 160kbps and 320kbps vbr MP3 rip on a pair of headphones. There were no limit to how many times a song can be played. They could scritinize the music for as long as they want. The testers were classified in to four categories: the curmudgeon, hipster, audiophile and pluralist.</p>
+    <p>The Hipster was in to electronica as well as drum and bass music. She did not hesitate to express how hard it was to distinguish between the various encodings and instead relied on her instincts. She was able to correctly guess the three encodings for her own track but failed at everyone else's track. 3/12.</p>
+    <p>The pluralist loved all music, and confidently and correctly identified the quality levels of her own track but only guessed the quality of three other track correctly. 6/12</p>
+    <p>The curmudgeon was more interested in how good the music sounded in the context of compression than the music itself. He was diligent in comparing the various tracks, but did not guess the quality of any of his own tracks right. He did manage to guess the quality level of five other tracks however. 5/12</p>
+    <p>The audiophile expectedly looked down on the lossy MP3 encoding, yet only managed to correctly identified one of his own tracks and four others. A disappointing 5/12.</p>
+
+    <h3>Gizmodo</h3>
+    <p>Gizmodo, a tech news blog, took a different route and crowd-sourced the experiment. After waiting a few weeks, a thousand of their readers <a href="http://www.mediafire.com/file/nbedwjm3wz0/thegreatmp3test.zip">downloaded</a> the test file and sent back their results. Readers were asked to listen to three songs at various bitrates and identify the point where they could not distinguish the encoding quality.</p>
+    <p>Unforunately the testing was not double blind because readers were conducting in on their own. However, the results were conclusive, 218kbps was the mean bitrate that readers found to be sufficiently indisdinguishible from the lossless source. From these results, it seems that the bitrate sweetspot is 256kbps.</p>
+    <p>
+    <img src="images/gizmodo-threshhold.png" />
+    </p>
+    <p>What makes this experiment especially interesting is that the survey also included the cost of the sound system. When the cost was plotted against the mean difference threshhold for quality, a clear correlation emerged. The price of the sound system had an enormous impact on the threshold of quality, starting at 180kbps for a system between $0-$50 to more than 260kbps for a $5000+ system.</p>
+    <p><img src="images/gizmodo-price.jpg" /></p>
+
+
+    <h3>Arstechnica</h3>
+    <p>Will Ryu of Arstechnica conducted one of the earliest MP3 quality experiments. He tested MP3s at 128kpbs, 160kbps, 192kbps and 256kbps and lossless CDs tracks on both his home stereo and Sony MDR-V6 headphones. However, he did know the quality ahead of time which means that these results are by no means scientific.</p>
+    <p>He claimed he had no touble distinguishing 128kbps MP3 audio from CD tracks. While it did get more difficult at higher bitrates, he believed he could still hear differences at 256kbps if he concentrated hard enough.</p>
+    
+
+    <h3>Studies Summary</h3>
+    <p>Although these experiments are by no means scientific the conclusions seem to match up with my analytical observations. MP3s encoding is indeed extremely efficient. A song encoded at 256kpbs, 1/6th the size is essentially indistinguish from the original source. Variable bit rate encoding raises the bar and most cannot distinguish a 160kbps vbr song even with delibrate effort. The grade of the audio equipment definitely seems to have an impact on how easily one can spot artifacts from encoding.</p> 
+    </p>  
+    <p>The benchmark for MP3 encondings will vary from person to person because everyone's ears have varying capacities and consume music through different equipment. Why not try the experiment yourself at sites like <a herf="http://mp3ornot.com/">MP3 or Not</a>?
     </p>
     </section>
     <section>
@@ -255,11 +282,10 @@
             <h3>Studies</h3>
             <p>
                 <a href="http://listening-tests.freetzi.com/html/128kbps_Extension_public_listening_test_results.htm">Results of 128kbps Extension Public Listening Test</a> (Amorim)<br />
-                <a href="http://www.maximumpc.com/article/do_higher_mp3_bit_rates_pay_off?page=0,3">Do Higher MP3 Bit Rates Pay Off?</a><br />
-                <a href="http://gizmodo.com/5251247/the-great-mp3-bitrate-test-my-ears-versus-yours">The Great MP3 Bitrate Test: My Ears Versus Yours</a><br />
-                <a href="http://gizmodo.com/5273332/the-great-mp3-bitrate-test-+-results">The Great MP3 Bitrate Test – Results</a><br />
-                <a href="http://www.lincomatic.com/mp3/mp3quality.html">mp3 vs cd audio quality tests</a><br />
-                <a href="http://arstechnica.com/wankerdesk/1q00/mp3/mp3-1.html">Do MP3 encoders sound different?</a><br />
+                <a href="http://www.maximumpc.com/article/do_higher_mp3_bit_rates_pay_off?page=0,3">Do Higher MP3 Bit Rates Pay Off?</a> (Decker, 2008)<br />
+                <a href="http://gizmodo.com/5273332/the-great-mp3-bitrate-test-+-results">The Great MP3 Bitrate Test – Results</a> (Wilson, 2009)<br />
+                <a href="http://www.lincomatic.com/mp3/mp3quality.html">mp3 vs cd audio quality tests</a> (Lin, 2005)<br />
+                <a href="http://arstechnica.com/wankerdesk/1q00/mp3/mp3-1.html">Do MP3 encoders sound different?</a> (Ryu, 2000)<br />
                 
             </p>
 
