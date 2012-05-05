@@ -45,14 +45,14 @@
         <h2>Analysis</h2>
         <h3>Tools</h3>
         <p><img class="hover" src="images/wav-sa.gif" alt="wav-sa"></p>
-        <p>Spectral analysis relies on a three-dimensional graph that plots the amplitude of each frequency over time.
+        <p><strong>Spectral analysis</strong> relies on a three-dimensional graph that plots the amplitude of each frequency over time.
             It is one of the riches ways to visualize sound and.
             Spectral analysis reveals how much, when and where (on the frequency spectrum) encoding is distorting sound.
             Spectral analysis will allow us to determine the effects of applying the psycoacoustics model on the lossless sample.
         </p>
-
+        <br />
         <p><img class="hover" src="images/wav-fa.gif" alt="wav-fa"></p>
-        <p>Frequency analysis relies on the spectra of sound, which is a plot of the loudness of sound across the audible frequency range over a short amount of time; in this case two seconds.
+        <p><strong>Frequency analysis</strong> relies on the spectra of sound, which is a plot of the loudness of sound across the audible frequency range over a short amount of time; in this case two seconds.
             Frequency analysis provides an insight to the MP3 encoding algorithm by showing how the psychoacoustic
             model is used to gradualy remove frequency ranges that is beyond or close to the boundaries of human hearing.
             How well the encoded sample's spectra matches with that of the original is a good indicator of the authenticity of reproduction. 
@@ -83,6 +83,7 @@
         <img class="hover" src="images/wav-sa.gif" alt="wav-sa">
         <img class="hover" src="images/wav-fa.gif" alt="wav-fa">
         </p>
+        <br />
         <h3 id="graph-var-128to256">128-256kbps variable bit rate MP3</h3>
         <p>
         The 128-256kbps vbr encoding preserves much of the nuance of sound in the audiable frequency range.
@@ -91,6 +92,8 @@
             the second half of the sample at a higher bitrate than the first makes sense.
         There is a clear frequency cut off at 16kHz and 20kHz. 
         The frequency graph reflects this with a significant valley at the 16kHz and 20kHz mark, otherwise the sound spectra appears to be mostly preserved.
+        </p>
+        <p>
         The reason for the valley and not a hard drop off is that the variable bit rate algorithm increases frequency coverage to 20kHz for the second half of the sample.
         The 20kHz is widely accepted as the boundry of human hearing, while most people cannot hear above 16kHz as they get older. 
         Hovering over the spectral graph reveals that pretty much all the details are preserved under the 16kHz and 20kHz mark.
@@ -100,12 +103,15 @@
         <img class="hover" src="images/128to256vbr-sa.gif" alt="128to256vbr-sa">
         <img class="hover" src="images/128to256vbr-fa.gif" alt="128to256vbr-fa">
         </p>
+        <br />
         <h3 id="graph-var-64to256">64-256kbps variable bit rate MP3</h3>
         <p>
         The 64-256kbps vbr encoding graphs do not look much different from the 128-256kbps vbr encoding.
         The frequency coverage below the 16kHz and 20kHz mark appears to be just as rich, the only difference 
         seems to be the lack of of spotty frequency coverage above teh 16kHz mark in the first part of the sample.
         The is the result of the lower boundary of 64kbps compared to the lower boundary of 128kbps of the previous encoding.
+        </p>
+        <p>
         A likely explanation is that the LAME vbr encoder did not consider the frequency range above 16kHz in the first part of the 
         sample to be worth storing. 
         The only reason it did so was to satisfy the 128kbps minimum bit rate.
@@ -116,6 +122,7 @@
         <img class="hover" src="images/64to256vbr-sa.gif" alt="64to256vbr-sa">
         <img class="hover" src="images/64to256vbr-fa.gif" alt="64to256vbr-fa">
         </p>
+        <br />
         <h3 id="graph-var-128to192">128-192kbps variable bit rate MP3</h3>
         <p>
         Lowering the upper boundary from 256kbps to 192kbps does produce noticible change in the spectral graph.
@@ -123,6 +130,8 @@
         However, this should not impact the audio quality since 16kHz is beyond the hearing range of most anyways.
         The spotty coverage of ferquency above 16kHz in the first part of sample returns, confirming that it is just an 
         artifact of the 128kbps minimum encoding rate.
+        </p>
+        <p>
         There is a slight reduction in sound density in the audioble range, most noticibly at the one large and two small holes
         that begin to appear in the first part of the sample.
         However, this is likely to be the pyschoacoustic model being used to reduce close to inaudible data. 
@@ -133,6 +142,7 @@
         <img class="hover" src="images/128to192vbr-sa.gif" alt="128to192vbr-sa">
         <img class="hover" src="images/128to192vbr-fa.gif" alt="128to192vbr-fa">
         </p>
+        <br />
         <h3 id="graph-con-256">256kbps constant bit rate MP3</h3>
         <p>
            There is no suprise that the spectral graph looks almost as complete as that of the original lossless WAV given 
@@ -148,6 +158,7 @@
         <img class="hover" src="images/256cbr-sa.gif" alt="256cbr-sa">
         <img class="hover" src="images/256cbr-fa.gif" alt="256cbr-fa">
         </p>
+        <br />
         <h3 id="graph-con-192">192kbps constant bit rate MP3</h3>
         <p>The spectral graph for 192kbps cbr looks good as expected. 
         Compared to the 256kbps cbr, the frequency converage was reduced to about 19kHz across all of the two seconds. 
@@ -167,6 +178,7 @@
         <img class="hover" src="images/192cbr-sa.gif" alt="192cbr-sa">
         <img class="hover" src="images/192cbr-fa.gif" alt="192cbr-fa">
         </p>
+        <br />
         <h3 id="graph-con-128">128kbps constant bit rate MP3</h3>
         <p>
         Finallly the bitrate is low enough to force the LAME encoder to make compromises.
@@ -183,18 +195,28 @@
         <img class="hover" src="images/128cbr-sa.gif" alt="128cbr-sa">
         <img class="hover" src="images/128cbr-fa.gif" alt="128cbr-fa">
         </p>
+        <br />
         <h3>Conclusion</h3>
         <p>The spectral and frequency analysis reveals that 192kbps is likely the lowest acceptable bitrate. Encoding at 128kbps is a minimum if authenticity of reproduction is a concern. 
-        However, the efficiency of the LAME encoder is impressive given that it can achieve a 6:1 compression ratio compared to the 1411kbps audio-CD source without almost no sacrifice to sound quality. 
-        Granted, the efficiency of the encoder is likely to depend on the complexity of the input, and complex sounds may set a higher bar for bitrate. 
-        Also keep in mind that LAME is known to be the most efficient MP3 encoder on the market, alternative encoders may produce noticibly worse sound.
+        The efficiency of the LAME encoder is impressive given that it can achieve a 6:1 compression ratio compared to the 1411kbps audio-CD source without almost no sacrifice to sound quality. 
+        </p>
+        <p>
+        However, the efficiency of the encoder is likely to depend on the complexity of the input, and complex sounds may set a higher bar for bitrate. 
+        LAME is also known to be the most efficient MP3 encoder, alternative encoders may produce noticibly worse sound.
         The variable bit rate encoding will enable an even higher compression ratio while preserving sound quality. 
         All of this is also under the assumption that typical consumers of MP3 audio have access to audiophile grade equipment when music usually consumed through cheap speakers or iPod headbuds. 
         128kbps may very well suffice for the majority of music listeners.
         </p>
     <h2>Real World Studies</h2>
-http://mp3ornot.com/
-    <h3></h3>
+    <p>Numerous studies have been done to test if people can indeed distiguish a high quality MP3 from the lossless source or a lower quality encoding with varying conclusions. Some well known experiments include:
+        <ul>
+            <li>128kbps Extension Public Listening Test</li>
+            <li></li>
+        </ul>
+    </p>
+
+    <p>The benchmark for MP3 encondings will vary from person to person because everyone's ears have varying capacities and consume music through different channels. Why not try the experiment yourself at sites like <a herf="http://mp3ornot.com/">MP3 or Not</a>?
+    </p>
     </section>
     <section>
         <h2>References</h2>
