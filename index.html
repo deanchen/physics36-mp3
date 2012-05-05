@@ -46,7 +46,7 @@
         <h3>Tools</h3>
         <p><img class="hover" src="images/wav-sa.gif" alt="wav-sa"></p>
         <p><strong>Spectral analysis</strong> relies on a three-dimensional graph that plots the amplitude of each frequency over time.
-            It is one of the riches ways to visualize sound and.
+            It is one of the riches ways to visualize sound.
             Spectral analysis reveals how much, when and where (on the frequency spectrum) encoding is distorting sound.
             Spectral analysis will allow us to determine the effects of applying the psycoacoustics model on the lossless sample.
         </p>
@@ -54,14 +54,14 @@
         <p><img class="hover" src="images/wav-fa.gif" alt="wav-fa"></p>
         <p><strong>Frequency analysis</strong> relies on the spectra of sound, which is a plot of the loudness of sound across the audible frequency range over a short amount of time; in this case two seconds.
             Frequency analysis provides an insight to the MP3 encoding algorithm by showing how the psychoacoustic
-            model is used to gradualy remove frequency ranges that is beyond or close to the boundaries of human hearing.
+            model is used to gradualy remove frequency ranges that are close to or beyond the boundaries of human hearing.
             How well the encoded sample's spectra matches with that of the original is a good indicator of the authenticity of reproduction. 
         </p>
 
         <h3>Bitrate Comparison</h3>
-        <p>The following graphs from <a href="http://www.adobe.com/products/audition.html">Adobe Audition</a> show how various encoding settings effect sound quality. 
+        <p>The following graphs from <a href="http://www.adobe.com/products/audition.html">Adobe Audition</a> show how various encoding settings affect sound quality. 
         The sound sample is taken over a two second period.
-        Hover over any of the MP3 spectral or frequency graph to compare it to the lossless graph. 
+        Hover over any of the MP3 spectral graph or spectra to compare it to the lossless graph. 
         Six different encodings with the <a href="http://lame.sourceforge.net/">LAME MP3 encoder</a> are shown, half variable rate and half constant rate in diminishing quality. The graph for the original lossless WAV is included as a reference point.
             <ul>
                 <li><a href="#graph-lossless">Lossless WAV</a></li>
@@ -75,10 +75,10 @@
             </p>
         <h4 id="graph-lossless">Lossless WAV</h4>
         <p>
-        The lossless WAV perfectly caputures sound at the time of the recording as expected; no information is lost.
-        The spectral graph is dense and smooth with datapoints across all combinations of time and frequency.
-        The frequency graph shows that the sound data covers the entire audible frequency. 
-        There is smooth progression loudness across the frequency spectrum with no significant peaks or vallys.
+        The lossless WAV perfectly captures sound at the time of the recording as expected; no information is lost.
+        The spectral graph is dense and smooth with data points across all combinations of time and frequency.
+        The spectra shows that the sound data covers the entire audible frequency. 
+        There is smooth progression loudness across the frequency spectrum with no significant peaks or valleys.
         <p>
         <img class="hover" src="images/wav-sa.gif" alt="wav-sa">
         <img class="hover" src="images/wav-fa.gif" alt="wav-fa">
@@ -88,16 +88,16 @@
         <p>
         The 128-256kbps vbr encoding preserves much of the nuance of sound in the audiable frequency range.
         The jump in frequency coverage around the middle of the track shows the variable bit rate algorithm in full effect.
-        The first half of the sample is noticably less complex than the second part so the vbr algorithmic decision to encode
+        The first half of the sample is less complex than the second part so the vbr algorithmic decision to encode
             the second half of the sample at a higher bitrate than the first makes sense.
         There is a clear frequency cut off at 16kHz and 20kHz. 
-        The frequency graph reflects this with a significant valley at the 16kHz and 20kHz mark, otherwise the sound spectra appears to be mostly preserved.
+        The spectra reflects this with a significant valley at the 16kHz and 20kHz mark, otherwise the sound spectra appears to be mostly preserved.
         </p>
         <p>
         The reason for the valley and not a hard drop off is that the variable bit rate algorithm increases frequency coverage to 20kHz for the second half of the sample.
-        The 20kHz is widely accepted as the boundry of human hearing, while most people cannot hear above 16kHz as they get older. 
+        20kHz is widely accepted as the boundry of human hearing, while most people cannot hear above 16kHz as they get older. 
         Hovering over the spectral graph reveals that pretty much all the details are preserved under the 16kHz and 20kHz mark.
-        The 128-256kbps enconding should failth fully render the original recording to the majority of the population.
+        The 128-256kbps encoding should faithfully render the original recording to the majority of the population.
         </p>
         <p>
         <img class="hover" src="images/128to256vbr-sa.gif" alt="128to256vbr-sa">
@@ -108,14 +108,14 @@
         <p>
         The 64-256kbps vbr encoding graphs do not look much different from the 128-256kbps vbr encoding.
         The frequency coverage below the 16kHz and 20kHz mark appears to be just as rich, the only difference 
-        seems to be the lack of of spotty frequency coverage above teh 16kHz mark in the first part of the sample.
-        The is the result of the lower boundary of 64kbps compared to the lower boundary of 128kbps of the previous encoding.
+        seems to be the lack of of spotty frequency coverage above the 16kHz mark in the first part of the sample.
+        The is a result of the lower boundary of 64kbps compared to the lower boundary of 128kbps of the previous encoding.
         </p>
         <p>
         A likely explanation is that the LAME vbr encoder did not consider the frequency range above 16kHz in the first part of the 
         sample to be worth storing. 
         The only reason it did so was to satisfy the 128kbps minimum bit rate.
-        As expected, the frequency graph reamins esentially unchaged compared to 128-256kpbs vbr encoding.
+        As expected, the spectra remains essentially unchaged compared to 128-256kpbs vbr encoding.
         The file size likely came out a bit smaller without the loss of authenticity in sound reproduction compared to 128-256kbps vbr and the lossless source.
         </p>
         <p>
@@ -125,19 +125,19 @@
         <br />
         <h3 id="graph-var-128to192">128-192kbps variable bit rate MP3</h3>
         <p>
-        Lowering the upper boundary from 256kbps to 192kbps does produce noticible change in the spectral graph.
+        Lowering the upper boundary from 256kbps to 192kbps does produce a change in the spectral graph.
         The frequency cutoff in the second part of the now creeps under the 20kHz in to the 16kHz mark. 
         However, this should not impact the audio quality since 16kHz is beyond the hearing range of most anyways.
-        The spotty coverage of ferquency above 16kHz in the first part of sample returns, confirming that it is just an 
+        The spotty coverage of frequency above 16kHz in the first part of sample returns, confirming that it is just an 
         artifact of the 128kbps minimum encoding rate.
         </p>
         <p>
-        There is a slight reduction in sound density in the audioble range, most noticibly at the one large and two small holes
+        There is a slight reduction in sound density in the audible range, most noticeably at the one large and two small holes
         that begin to appear in the first part of the sample.
-        However, this is likely to be the pyschoacoustic model being used to reduce close to inaudible data. 
+        However, this is likely to be the psychoacoustic model being used to reduce close to inaudible data. 
         The largest hole is only about 70ms wide expected to have very little effect on sound quality because of the duration.
-        The removed sound data is also likely to be masked by the high amplitude frequences just below the 10kHz mark.
-        The frequency graph remains unchanged from the other vbr encodings.
+        The removed sound data is also likely to be masked by the high amplitude frequencies just below the 10kHz mark.
+        The spectra remains unchanged from the other vbr encodings.
         <p>
         <img class="hover" src="images/128to192vbr-sa.gif" alt="128to192vbr-sa">
         <img class="hover" src="images/128to192vbr-fa.gif" alt="128to192vbr-fa">
@@ -145,10 +145,10 @@
         <br />
         <h3 id="graph-con-256">256kbps constant bit rate MP3</h3>
         <p>
-           There is no suprise that the spectral graph looks almost as complete as that of the original lossless WAV given 
+           There is no surprise that the spectral graph looks almost as complete as that of the original lossless WAV given 
            the positive results from the vbr encodings.
            The difference in encoding approach between the cbr and vbr is obvious given that the frequency coverage and bitrate stays constant in this case. 
-           There was a noticible jump in frequency coverage in the vbr spectral graph. 
+           There was a significant jump in frequency coverage in the vbr spectral graph. 
            Almost all details are faithfully preserved under the 21kHz mark.
            The fact that the LAME encoder chose to preserve frequencies above the audible limit of 20kHz is indicative that 256kbps 
            is more than enough to capture the full range of sounds from the original lossless source. 
@@ -161,19 +161,19 @@
         <br />
         <h3 id="graph-con-192">192kbps constant bit rate MP3</h3>
         <p>The spectral graph for 192kbps cbr looks good as expected. 
-        Compared to the 256kbps cbr, the frequency converage was reduced to about 19kHz across all of the two seconds. 
-        This is unlikely to cause a significant degradtion in sound quality given that 19kHz is still well above the safe standard of 16kHz for the vast majority of the population. 
-        The spectral graph otherwise shows that a 192kbps cbr enconding preserves much of the details in the audible range of the original sample.</p>
+        Compared to the 256kbps cbr, the frequency coverage was reduced to about 19kHz across all of the two seconds. 
+        This is unlikely to cause a significant degradation in sound quality given that 19kHz is still well above the safe standard of 16kHz for the vast majority of the population. 
+        The spectral graph otherwise shows that a 192kbps cbr encoding preserves much of the details in the audible range of the original sample.</p>
         <p>
-        The spectra of the encoded sample reveals something interesting. There is a significant valley at the 16kHz mark. This valley was not present in the 256kbps cbr encoding but was present in all the vbr encoded samples. The valley made sense for vbr samples because half of the sample was encoded at a higher bit rate than the other. 
+        The spectra of the encoded sample reveals something interesting. There is a significant valley at the 16kHz mark. This valley was not present in the 256kbps cbr encoding but was present in all the vbr encoded samples. The valley made sense for vbr encoded samples because half of the sample was encoded at a higher bit rate than the other. 
         However, the entire sample is encoded at the same bit rate in this case, which makes the valley very odd.
-        The limitation of constant bit rate would seemlingly prevent the optimization of encoding less complex frames at a lower bitrate to free up bits for more complex frames.
+        The limitation of constant bit rate would seemingly prevent the optimization of encoding less complex frames at a lower bitrate to free up bits for more complex frames.
         </p>
         <p>
         The 16kHz valley is not so mysterious when we consider the role of the bit reservoir.
-        The bit reservoir comes in to effect only when the bitrate is reduced from 256kbps to 192kbps cbr beacause certain complex frames, especially in the second half of the sample, likely came under strain by bitrate reduction.
+        The bit reservoir comes in to effect only when the bitrate is reduced from 256kbps to 192kbps cbr because certain complex frames, especially in the second half of the sample, likely came under strain by bitrate reduction.
         The bit reservoir allows these complex frames to store its extra data in the previous frame at the cost of reducing the bitrate of the previous frame. 
-        The valley at 16kHz is attributed to the lower bitrate frames that is storing the data of its more complex neighbors.  
+        The valley at 16kHz is attributed to the lower bitrate frames that are storing the data of its more complex neighbors.  
         <p>
         <img class="hover" src="images/192cbr-sa.gif" alt="192cbr-sa">
         <img class="hover" src="images/192cbr-fa.gif" alt="192cbr-fa">
@@ -181,15 +181,15 @@
         <br />
         <h3 id="graph-con-128">128kbps constant bit rate MP3</h3>
         <p>
-        Finallly the bitrate is low enough to force the LAME encoder to make compromises.
+        Finally the bitrate is low enough to force the LAME encoder to make compromises.
         The immediate observation is that frequency coverage has been reduced to below 16kHz, the optimistic upper boundary for human perception.  
-        This will likely cause a subtle degration in sound quality.
-        We also see that the frequencies under the coverage range is less rich. Lines are more finely defined and the holes are numerous and more apparent.
+        This will likely cause a subtle degradation in sound quality.
+        We also see that the frequencies under the coverage range are less rich. Lines are more finely defined and the holes are numerous and more apparent.
         </p>
         <p>
-        The effects of eliminating data according to the psychoacoustic model is more obvious. The dotted streak of holes in the second part of the sample right above the 8kHz mark is likly to be masked by the two much stronger streaks of frequencies(8kHz, 9.5kHz). 
-        Although the details of low and midrange(up to 5kHz) seems mostly preserved, the frequency coverage above looks noticibly more sparse and hollow compared to the original sample.
-        This observation is also reflected in the sound spectra. The spectra looks noticibly different compared to the original with deep vallies below the 500Hz, at the 7.5kHz and 1000kHz mark where only a small dent used to exist.
+        The effects of eliminating data according to the psychoacoustic model are more obvious. The dotted streak of holes in the second part of the sample right above the 8kHz mark is likely to be masked by the two much stronger streaks of frequencies (8kHz, 9.5kHz). 
+        Although the details of low and midrange (up to 5kHz) seems mostly preserved, the frequency coverage above looks noticeably more sparse and hollow compared to the original sample.
+        This observation is also reflected in the sound spectra. The spectra looks noticeably different compared to the original with deep valleys below the 500Hz, at the 7.5kHz and 1000kHz mark where only a small dent used to exist.
         </p>
         <p>
         <img class="hover" src="images/128cbr-sa.gif" alt="128cbr-sa">
@@ -198,13 +198,13 @@
         <br />
         <h3>Analysis Conclusion</h3>
         <p>The spectral and frequency analysis reveals that 192kbps is likely the lowest acceptable bitrate. Encoding at 128kbps is a minimum if authenticity of reproduction is a concern. 
-        The efficiency of the LAME encoder is impressive given that it can achieve a 6:1 compression ratio compared to the 1411kbps audio-CD source without almost no sacrifice to sound quality. 
+        The efficiency of the LAME encoder is impressive given that it can achieve a 6:1 compression ratio compared to the 1411kbps audio-CD source with almost no sacrifice to sound quality. 
         </p>
         <p>
         However, the efficiency of the encoder is likely to depend on the complexity of the input, and complex sounds may set a higher bar for bitrate. 
-        LAME is also known to be the most efficient MP3 encoder, alternative encoders may produce noticibly worse sound.
+        LAME is also known to be the most efficient MP3 encoder; alternative encoders may require much higher bitrates to achieve the same sound quality.
         The variable bit rate encoding will enable an even higher compression ratio while preserving sound quality. 
-        All of this is also under the assumption that typical consumers of MP3 audio have access to audiophile grade equipment when music usually consumed through cheap speakers or iPod headbuds. 
+        All of this is also under the assumption that typical consumers of MP3 audio have access to audiophile grade equipment when music usually consumed through cheap speakers or iPod head buds. 
         128kbps may very well suffice for the majority of music listeners.
         </p>
     <h2>Real World Studies</h2>
