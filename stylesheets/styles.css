@@ -7,7 +7,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
-  margin:0 0 20px;
+  margin:20px 0 20px;
 }
 
 p, ul, ol, table, pre, dl {
@@ -187,7 +187,7 @@ footer {
     text-align: center;
 }
 
-@media print, screen and (max-width: 960px) {
+@media print, screen and (max-width: 700px) {
   
   div.wrapper {
     width:auto;
