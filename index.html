@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>MP3: History, Theory, Encoding, and Psychoacoustic</title>
+    <title>MP3 Encoding and Psychoacoustic</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -31,7 +31,7 @@
 <body>
 <div class="wrapper">
     <section>
-        <h1>MP3: History, Theory, Encoding, and Psychoacoustics</h1>
+        <h1>MP3 Encoding and Psychoacoustics</h1>
         Spectral and frequency analysis of lossless
         <h2>Overview</h2>
             <h3>History</h3>
@@ -42,24 +42,23 @@
             <h3>Masking</h3>
             <h3>Mini</h3>
         <h2>LAME</h2>
-        <h2>Visual Analysis</h2>
-        <h3>Spectral Analysis</h3>
-        <p>The spectral graph is a three-dimensional graph that plots the amplitude of each frequency over time.
-            It is one of the riches ways to visualize sound.
-            Spectral analysis reveals how much, when and where (on the frequency spectrum) sound data is being removed.
-            The theory behind the psychoacoustic model should be apparent in the frequency graph.
+        <h2>Analysis</h2>
+        <h3>Tools</h3>
+        <p><img class="hover" src="images/wav-sa.gif" alt="wav-sa"></p>
+        <p>Spectral analysis relies on a three-dimensional graph that plots the amplitude of each frequency over time.
+            It is one of the riches ways to visualize sound and.
+            Spectral analysis reveals how much, when and where (on the frequency spectrum) encoding is distorting sound.
+            Spectral analysis will allow us to determine the effects of applying the psycoacoustics model on the lossless sample.
         </p>
 
-        <p><img class="hover" src="images/wav-sa.gif" alt="wav-sa"></p>
-
-        <h3>Frequency Analysis</h3>
-        <p>The sound spectra plots the loudness of sound across the audible frequency range over a short amount of time, in this case two seconds.
+        <p><img class="hover" src="images/wav-fa.gif" alt="wav-fa"></p>
+        <p>Frequency analysis relies on the spectra of sound, which is a plot of the loudness of sound across the audible frequency range over a short amount of time; in this case two seconds.
             Frequency analysis provides an insight to the MP3 encoding algorithm by showing how the psychoacoustic
             model is used to gradualy remove frequency ranges that is beyond or close to the boundaries of human hearing.
+            How well the encoded sample's spectra matches with that of the original is a good indicator of the authenticity of reproduction. 
         </p>
-        <p><img class="hover" src="images/wav-fa.gif" alt="wav-fa"></p>
 
-        <h3>Comparison of Bitrate on Frequency Profile</h3>
+        <h3>Bitrate Comparison</h3>
         <p>The following graphs from <a href="http://www.adobe.com/products/audition.html">Adobe Audition</a> show how various encoding settings effect sound quality. 
         The sound sample is taken over a two second period.
         Hover over any of the MP3 spectral or frequency graph to compare it to the lossless graph. 
@@ -187,10 +186,15 @@
         <h3>Conclusion</h3>
         <p>The spectral and frequency analysis reveals that 192kbps is likely the lowest acceptable bitrate. Encoding at 128kbps is a minimum if authenticity of reproduction is a concern. 
         However, the efficiency of the LAME encoder is impressive given that it can achieve a 6:1 compression ratio compared to the 1411kbps audio-CD source without almost no sacrifice to sound quality. 
+        Granted, the efficiency of the encoder is likely to depend on the complexity of the input, and complex sounds may set a higher bar for bitrate. 
+        Also keep in mind that LAME is known to be the most efficient MP3 encoder on the market, alternative encoders may produce noticibly worse sound.
         The variable bit rate encoding will enable an even higher compression ratio while preserving sound quality. 
+        All of this is also under the assumption that typical consumers of MP3 audio have access to audiophile grade equipment when music usually consumed through cheap speakers or iPod headbuds. 
+        128kbps may very well suffice for the majority of music listeners.
         </p>
     <h2>Real World Studies</h2>
-
+http://mp3ornot.com/
+    <h3></h3>
     </section>
     <section>
         <h2>References</h2>
@@ -199,6 +203,7 @@
                 <a href="http://inventors.about.com/od/mstartinventions/a/MPThree.htm">The History of MP3</a> (Bellis)<br />
                 <a href="http://www.mp3-history.com/en/the_story_of_mp3.html">The mp3 History</a><br />
                 <a href="http://wiki.hydrogenaudio.org/index.php?title=MP3">MP3</a><br />
+                <a href="http://www.wired.com/gadgets/miscellaneous/magazine/17-09/ff_goodenough?currentPage=all">The Good Enough Revolution: When Cheap and Simple Is Just Fine</a><br />
             </p>
             <h3>Theory</h3>
             <p>
@@ -228,6 +233,12 @@
             <h3>Studies</h3>
             <p>
                 <a href="http://listening-tests.freetzi.com/html/128kbps_Extension_public_listening_test_results.htm">Results of 128kbps Extension Public Listening Test</a> (Amorim)<br />
+                <a href="http://www.maximumpc.com/article/do_higher_mp3_bit_rates_pay_off?page=0,3">Do Higher MP3 Bit Rates Pay Off?</a><br />
+                <a href="http://gizmodo.com/5251247/the-great-mp3-bitrate-test-my-ears-versus-yours">The Great MP3 Bitrate Test: My Ears Versus Yours</a><br />
+                <a href="http://gizmodo.com/5273332/the-great-mp3-bitrate-test-+-results">The Great MP3 Bitrate Test – Results</a><br />
+                <a href="http://www.lincomatic.com/mp3/mp3quality.html">mp3 vs cd audio quality tests</a><br />
+                <a href="http://arstechnica.com/wankerdesk/1q00/mp3/mp3-1.html">Do MP3 encoders sound different?</a><br />
+                
             </p>
 
     </section>
