@@ -32,17 +32,30 @@
 <div class="wrapper">
     <section>
         <h1>MP3 Encoding and Psychoacoustics</h1>
-        Spectral and frequency analysis of lossless
         <h2>Overview</h2>
-            <h3>History</h3>
-            <h3>Use</h3>
+        <p>MP3 is the most widely used lossy digital audio encoding format. The standard was published in 1993 and quickly adopted by the world. The MP3 compression algorithm can reduce audio file size by up to a magnitude, which allowed people to quickly transmit and efficiently store music on their portal audio players in addition to enabling the sharing and consumption of music on the internet.</p>
         <h2>Theory</h2>
-            <h3>Bitrate</h3>
-            <h3>Sampling Rate</h3>
-            <h3>Masking</h3>
-            <h3>Mini</h3>
-        <h2>LAME</h2>
+        <p>The algorithm to encode and decode MP3 files is extremely complex and requires a firm understanding of mathematics. However, the basic principle is easy to understand.</p>
+        <h3>Psychoacoustics</h3>
+        <p>Psychoacoustics is fundamental to the MP3 encoding algorithm that is capable of reducing an audio file size by 10x. The study of psychoacoustics reveals that the human mind and ear have inherent limitations. By understanding these limitations, we can eliminate or distort sound in a subtle and in some cases, unnoticeable manner. The primary psychoacoustics principles the MP3 encoding algorithm employ are the human frequency perception range and masking effects of sound due to human biology.</p>
+
+        <p>Humans can only hear frequencies between 20Hz and 20kHz, anything outside of that range can be thrown away. Auditory masking occurs when humans have trouble distinguishing sound when the two frequencies are too similar. Temporal masking occurs when humans have trouble perceiving distinct sounds when they occur quickly one after another (5ms). The biology of the human ear prevents a quiet sound from being heard quickly after a loud sand and the way the human mind perceives sound prevents quite sound from being heard if a loud sound quickly follows.</p>
+        <p><img src="images/frequency-boundary.gif" /></p>
+        <h3>Bitrate</h3>
+        <p>The bitrate is the number of bits per second sound is stored at. By reducing the bitrate, we can reduce the amount of space required to store the file. One way to reduce the bitrate is to apply the principles of psychoacoustics to remove the non-audible or barely audible parts of a recording.</p>
+
+        <p>There are two types of bitrate when it comes to encoding MP3, constant bitrate and variable bitrate. Constant bitrate encoding got a head start because it was more popular. The algorithm simply had to figure out which sounds to eliminate to ensure that the file is only predefined number of bits per second to store sound.</p>
+
+        <p>However, encoding efficiency could be dramatically improved the algorithm accounted for the complexity of sound at various parts of the file. For example, storing a few seconds of silence should take much few bits than a complicated percussion section. By adjusting the bitrate to accommodate for varying levels of complexity in sound, variable rate encoding can either produce files of equal sound fidelity to constant bit rate encoding at a smaller size or of increased sound fidelity given the same amount of space.</p>
+
+        <p>MP3 files are stored as a stream of tiny frames of sound much like movies are merely streams of images. Various tricks can be applied to increase the efficiency of compression. One such optimization is known as the bit reservoir where the data for frames do not have to be constant despite the fact that the size of each frame has to be constant. Think of it as variable bit rate encoding on a microscopic scale. Complex frames can store extra sound data that cannot fit in the frame size governed by bitrate, by stealing extra space from the neighbor to its left. This would not be very effective if adjacent frames are both complicated and need a lot of space but can work wonders if a complex frame follows a simple frame.</p>
+
+        <p>After we apply fancy psychoacoustics models, the file size can be further reduced with a lossless compression technique called Huffman coding. It can be very effective at compressing complex sound data by using a precompiled lookup table of common data sequences to replace long data sequences with much shorter symbols. The decoding step will then simply do a reverse lookup and replace the symbols with the long data sequences and nothing gets lost in translation.</p>
+
+        <p><em>For those who want to learn the nitty gritty of the MP3 algorithm, see the Encoding section of references at the end of this paper</em></p>
+        
         <h2>Analysis</h2>
+        <p>Now the fundamentals of the MP3 algorithms are understood, let us see how well it actually works.</p>
         <h3>Tools</h3>
         <p><img class="hover" src="images/wav-sa.gif" alt="wav-sa"></p>
         <p><strong>Spectral analysis</strong> relies on a three-dimensional graph that plots the amplitude of each frequency over time.
@@ -249,6 +262,7 @@
         <h2>References</h2>
             <h3>General</h3>
             <p>
+            <a href="http://computer.howstuffworks.com/mp3.htm">How MP3 Files Work</a> (Brain)<br />
                 <a href="http://inventors.about.com/od/mstartinventions/a/MPThree.htm">The History of MP3</a> (Bellis)<br />
                 <a href="http://www.mp3-history.com/en/the_story_of_mp3.html">The mp3 History</a><br />
                 <a href="http://wiki.hydrogenaudio.org/index.php?title=MP3">MP3</a><br />
